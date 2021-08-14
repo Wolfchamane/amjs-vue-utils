@@ -10,7 +10,7 @@
     },
     "main": "index.js",
     "scripts": {
-        "tests": "NODE_ENV=test node node_modules/@amjs/vue-tools/scripts/jest.js"
+        "test": "NODE_ENV=test node node_modules/@amjs/vue-tools/scripts/jest.js"
     },
     "dependencies": {
         "@amjs/templater": "^0.1.6",
