@@ -1,0 +1,25 @@
+{
+    "name": "@amjs/vue-utils",
+    "version": "0.1.0",
+    "description": "Collection of plugins and utils for any VueJS project",
+    "author": "Arturo Martínez Diaz <arturo.martinez@amartinez.dev>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Wolfchamane/amjs-vue-utils.git"
+    },
+    "main": "index.js",
+    "scripts": {
+        "tests": "NODE_ENV=test node node_modules/@amjs/vue-tools/scripts/jest.js"
+    },
+    "dependencies": {
+        "@amjs/templater": "^0.1.6",
+        "@jf/prop-sep": "^3.0.0"
+    },
+    "peerDependencies": {
+        "vue": "^2.6.14"
+    },
+    "devDependencies": {
+        "@amjs/vue-tools": "^1.1.2"
+    }
+}
