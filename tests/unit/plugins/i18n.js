@@ -36,8 +36,11 @@ describe('i18n Plugin', () =>
         it('For "labels.complex" and user "Foo", returns "Hello Foo!"', () =>
             expect(Vue.prototype.$_tr('labels.complex', { user : 'Foo' })).toBe('Hello Foo!'));
 
-        it('For "labels.multiple" return the array of values', () =>
-            expect(Vue.prototype.$_tr('labels.multiple')).toEqual(enGB.labels.multiple));
+        it('For "labels.multiple" returns the key', () =>
+            expect(Vue.prototype.$_tr('labels.multiple')).toEqual('labels.multiple'));
+
+        it('In other case returns the key', () =>
+            expect(Vue.prototype.$_tr('labels.unknown')).toBe('labels.unknown'));
     });
 
     describe('$_trn works as expected', () =>
@@ -50,6 +53,9 @@ describe('i18n Plugin', () =>
 
         it('For "labels.multiple", order 2 and context { \"user\": \"Foo\" }, returns "Foo!"', () =>
             expect(Vue.prototype.$_trn('labels.multiple', 2, { user : 'Foo' })).toBe('Foo!'));
+
+        it('In other case returns the key', () =>
+            expect(Vue.prototype.$_trn('labels.unknown')).toBe('labels.unknown'));
     });
 
     describe('$_i18n other methods', () =>
@@ -75,6 +81,12 @@ describe('i18n Plugin', () =>
         it('available() returns the locales configured', () =>
         {
             expect(Vue.prototype.$_i18n.available()).toEqual(['enGB', 'esES']);
+        });
+
+        it('add() adds a new collection', () =>
+        {
+            Vue.prototype.$_i18n.add('foo', {});
+            expect(Vue.prototype.$_i18n.available()).toEqual(['enGB', 'esES', 'foo']);
         });
     });
 });
