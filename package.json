@@ -13,13 +13,12 @@
         "test": "NODE_ENV=test node node_modules/@amjs/vue-tools/scripts/jest.js"
     },
     "dependencies": {
-        "@amjs/templater": "^0.1.6",
         "@jf/prop-sep": "^3.0.0"
     },
     "peerDependencies": {
         "vue": "^2.6.14"
     },
     "devDependencies": {
-        "@amjs/vue-tools": "^1.1.2"
+        "@amjs/vue-tools": "^2.0.0"
     }
 }
